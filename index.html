@@ -18,115 +18,191 @@
 	<script src="js/script.js"></script>
 	</head>
 <body>
+	<div id="wrapper">
+		<h1>Netrunner Deck Checker</h1>
+		<!-- Deck ID input -->
+		Enter Deck ID Number:
+		<br>
+		<input type="text" id="targetDeckInput">
+		<br>
+		<button id='check-deck'>Check Deck!</button>
 
-<svg width="0" height="0" viewBox="0 0 677 601" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nrdb_svg_hex">
-    <defs>
-      <symbol id="hex"><polygon points="623,302.91412353515625 480,550.5973510742188 194,550.5973510742188 51,302.91412353515625 194,55.23085021972656 480,55.23085021972656 623,302.91412353515625 "></polygon></symbol>
-      <symbol id="rect"><rect x="0" y="0" width="677" height="601" fill="white"></rect></symbol>
-    </defs>
-    </svg>
+		<svg width="0" height="0" viewBox="0 0 677 601" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nrdb_svg_hex">
+		    <defs>
+		      <symbol id="hex"><polygon points="623,302.91412353515625 480,550.5973510742188 194,550.5973510742188 51,302.91412353515625 194,55.23085021972656 480,55.23085021972656 623,302.91412353515625 "></polygon></symbol>
+		      <symbol id="rect"><rect x="0" y="0" width="677" height="601" fill="white"></rect></symbol>
+		    </defs>
+		</svg>
 
-<svg>
+		<div id="core-deluxe">
+			<h4 class="pack-header">Core / Deluxe</h4>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="core" checked="checked" /> Core Set
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="cac" />Creation and Control
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="hap" />Honor and Profit
+			  	</label>
+			</div>  	
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="oac" />Order and Chaos
+			  	</label>
+			</div>  
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="dad" />Data and Destiny
+			  	</label>
+			</div>  				
 
-	<label>
-	  <input type="checkbox" name="core" checked="checked" /> Core Set</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="wla" />What Lies Ahead</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="ta" />Trace Amount</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="ce" />Cyber Exodus</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="asis" />A Study in Static</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="hs" />Humanity's Shadow</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="fp" />Future Proof</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="cac" />Creation and Control</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="om" />Opening Moves</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="st" />Second Thoughts</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="mt" />Mala Tempora</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="tc" />True Colors</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="fal" />Fear and Loathing</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="dt" />Double Time</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="hap" />Honor and Profit</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="up" />Upstalk</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="tsb" />The Spaces Between</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="fc" />First Contact</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="uao" />Up and Over</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="atr" />All That Remains</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="ts" />The Source</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="oac" />Order and Chaos</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="val" />The Valley</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="bb" />Breaker Bay</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="cc" />Chrome City</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="uw" />The Underway</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="oh" />Old Hollywood</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="uot" />The Universe of Tomorrow</label>
-	<br>
-	<label>
-	  <input type="checkbox" name="dad" />Data and Destiny</label>
-	<br>
+		<div id="genesis">
+			<h4 class="pack-header">Genesis</h4>
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="wla" />What Lies Ahead
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="ta" />Trace Amount
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="ce" />Cyber Exodus
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="asis" />A Study in Static
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="hs" />Humanity's Shadow
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="fp" />Future Proof
+			  	</label>
+			</div>  	
+		</div>
 
+		<div id="spin">
+			<h4 class="pack-header">Spin</h4>
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="om" />Opening Moves
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="st" />Second Thoughts
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="mt" />Mala Tempora
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="tc" />True Colors
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="fal" />Fear and Loathing
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="dt" />Double Time
+			  	</label>
+			</div>  	
+		</div>
+		
+		<div id="lunar">
+			<h4 class="pack-header">Lunar</h4>
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="up" />Upstalk
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="tsb" />The Spaces Between
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="fc" />First Contact
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="uao" />Up and Over
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="atr" />All That Remains
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="ts" />The Source
+			  	</label>
+			</div>  	
+		</div>
 
-	<button id="select-all">Select All</button>
-	<button id="deselect-all">Deselect All</button>
-	<br>
-	<!-- Deck ID input -->
-	Enter Deck ID Number:
-	<br>
-	<input type="text" id="targetDeckInput">
-	<br>
-	<button id='check-deck'>Check Deck!</button>
-	<ul id="missing-cards">
-	</ul>
+		<div id="sansan">
+			<h4 class="pack-header">SanSan</h4>			
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="val" />The Valley
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="bb" />Breaker Bay
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="cc" />Chrome City
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="uw" />The Underway
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="oh" />Old Hollywood
+			  	</label>
+			</div>  		
+			<div class="checkbox">
+				<label>
+			  		<input type="checkbox" name="uot" />The Universe of Tomorrow
+			  	</label>
+			</div>  
+		</div>					
+
+		<button id="select-all">Select All</button>
+		<button id="deselect-all">Deselect All</button>
+		<br>
+		<ul id="missing-cards">
+		</ul>
+	</div>
 </body>
 </html>

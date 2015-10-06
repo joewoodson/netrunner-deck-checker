@@ -56,7 +56,7 @@ NRDB.tip = {};
 
 		if(NRDB.api_url && (typeof Modernizr === 'undefined' || !Modernizr.touch )) {
 			$('body').on({
-				mouseover : tip.display,
+				mouseenter : tip.display,
 				focus : tip.display
 			}, 'a');
 		}
