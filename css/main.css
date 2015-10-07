@@ -65,7 +65,8 @@ html {
   content: "\e60d"; }
 
 .icon-anarch:before {
-  content: "\e605"; }
+  content: "\e605";
+  font-family: 'netrunner'; }
 
 .icon-click:before {
   content: "\e611"; }
@@ -74,19 +75,24 @@ html {
   content: "\e600"; }
 
 .icon-criminal:before {
-  content: "\e612"; }
+  content: "\e612";
+  font-family: 'netrunner'; }
 
 .icon-haas-bioroid:before {
-  content: "\e602"; }
+  content: "\e602";
+  font-family: 'netrunner'; }
 
 .icon-jintekisimple:before {
-  content: "\e005"; }
+  content: "\e005";
+  font-family: 'netrunner'; }
 
 .icon-jinteki:before {
-  content: "\e609"; }
+  content: "\e609";
+  font-family: 'netrunner'; }
 
 .icon-nbn:before {
-  content: "\e60b"; }
+  content: "\e60b";
+  font-family: 'netrunner'; }
 
 .icon-recurring-credit:before {
   content: "\e608"; }
@@ -95,10 +101,12 @@ html {
   content: "\e60f"; }
 
 .icon-shaper:before {
-  content: "\e603"; }
+  content: "\e603";
+  font-family: 'netrunner'; }
 
 .icon-shaper-smooth:before {
-  content: "\e613"; }
+  content: "\e613";
+  font-family: 'netrunner'; }
 
 .icon-subroutine:before {
   content: "\e604"; }
@@ -107,7 +115,8 @@ html {
   content: "\e606"; }
 
 .icon-weyland-consortium:before {
-  content: "\e607"; }
+  content: "\e607";
+  font-family: 'netrunner'; }
 
 .icon-link-half-bottom:before {
   content: "\e61b"; }
@@ -225,6 +234,19 @@ div.qtip-nrdb h4 {
 * {
   color: #333; }
 
+#check-deck {
+  background-color: #337AB7;
+  color: #fff; }
+  #check-deck:hover {
+    background-color: #286090;
+    border-color: #204d74; }
+
+#missing-cards li a {
+  color: #337AB7;
+  text-decoration: none; }
+  #missing-cards li a:hover {
+    color: #23527c; }
+
 * {
   font-family: "Lora", sans-serif;
   font-weight: normal; }
@@ -232,6 +254,23 @@ div.qtip-nrdb h4 {
 h1 {
   font-family: "Exo", sans-serif;
   font-weight: 500; }
+
+#deck-id label {
+  font-size: 16px;
+  font-weight: bold; }
+#deck-id button {
+  font-size: 14px; }
+
+h4 {
+  font-size: 16px;
+  font-weight: bold; }
+
+#missing-cards {
+  list-style-type: none; }
+  #missing-cards h2:before {
+    margin-right: 8px; }
+  #missing-cards li {
+    margin: 3px 0; }
 
 #wrapper {
   max-width: 68em;
@@ -242,15 +281,82 @@ h1 {
     content: "";
     display: table; }
 
+#main-content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  #main-content:last-child {
+    margin-right: 0; }
+
 .checkbox {
   margin-top: 0.3em; }
 
 h1 {
-  border-bottom: 1px solid lightgrey; }
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 35px; }
 
 .pack-header {
-  font-size: 16px;
-  font-weight: bold;
   margin-bottom: 0.2em; }
 
-/*# sourceMappingURL=main.css.map */
+.checkbox label {
+  cursor: pointer;
+  cursor: hand; }
+
+#deck-id label {
+  display: inline-block; }
+#deck-id input {
+  display: block;
+  margin: 9px 0;
+  width: 300px;
+  padding: 8px 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.07451) 0px 1px 1px 0px inset;
+  border: 1px solid lightgrey; }
+  #deck-id input:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0;
+    border: 1px solid #66AFE9; }
+#deck-id button {
+  padding: 0.7em;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid #2e6da4;
+  cursor: pointer;
+  cursor: hand; }
+
+#column-one {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  #column-one:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 1024px) {
+    #column-one {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      #column-one:last-child {
+        margin-right: 0; } }
+
+#column-two {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  margin-left: -2.98543%; }
+  #column-two:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 1024px) {
+    #column-two {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      #column-two:last-child {
+        margin-right: 0; } }
+  #column-two #spin h4:first-child {
+    margin-top: 0; }

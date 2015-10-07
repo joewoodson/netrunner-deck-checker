@@ -32,39 +32,53 @@ $(document).ready(function() {
         $.getJSON("http://netrunnerdb.com/api/cards/")
       ).done(function(targetDeckData, allCardData) {
 
+        var targetDeckName = targetDeckData[0].name;
         var targetDeck = [];
-        var missingCards = [];
+        var missingCardCodes = [];
         var tempArr = [];
+        var missingCards = [];
         var missingCardTitles = [];
         var allCardCodes = [];
-        var displayedList = [];
+        var displayedList = ['<h2>' + targetDeckName + '</h2>'];
+
+        function Card(code, title, type) {
+          this.code = code;
+          this.title = title;
+          this.type = type;
+        }
 
         for (var key in targetDeckData[0].cards) {
           targetDeck.push(key);
         };
         for (var i = 0; i < targetDeck.length; i++) {
           if (ownedSetCodes.indexOf(targetDeck[i]) == -1) {
-            missingCards.push(targetDeck[i]);
+            missingCardCodes.push(targetDeck[i]);
           };
         };
         for (var i = 0; i < allCardData[0].length; i++) {
           allCardCodes.push(allCardData[0][i].code);
         }
-
-        for (var i = 0; i < missingCards.length; i++) {
-          tempArr.push(allCardCodes.indexOf(missingCards[i]));
+        for (var i = 0; i < missingCardCodes.length; i++) {
+          tempArr.push(allCardCodes.indexOf(missingCardCodes[i]));
         }
         for (var i = 0; i < tempArr.length; i++) {
-          missingCardTitles.push(allCardData[0][tempArr[i]].title);
+          var currentMissingCard = allCardData[0][tempArr[i]];
+          var code = currentMissingCard.code;
+          var title = currentMissingCard.title;
+          var type = currentMissingCard.type;
+          missingCards.push(new Card(code, title, type));
+
         }
-        if (missingCardTitles.length == 0) {
-          displayedList = '<p>You already own all the necessary cards.</p>';
+        if (missingCards.length == 0) {
+          displayedList = '<h2>' + targetDeckName + '</h2><p>You already own all the necessary cards.</p>';
         } else {
-          for (var i = 0; i < missingCardTitles.length; i++) {
-            displayedList += '<li><a href="http://netrunnerdb.com/en/card/' + missingCards[i] + '">' + missingCardTitles[i] + '</a></li>';
+          for (var i = 0; i < missingCards.length; i++) {
+            displayedList += '<li><a href="http://netrunnerdb.com/en/card/' + missingCards[i].code + '">' + missingCards[i].title + '</a></li>';
           }
         }
+        console.log(missingCards);
         $('#missing-cards').html(displayedList);
+   
 
       }); /**********End of second ajax request*************/
 
